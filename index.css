@@ -1,0 +1,23 @@
+body {
+  
+  background-color: #fffd98;
+
+
+}
+
+h1, h2{
+  font-size:40pt;
+  color:#6f4e37;
+  font-family: 'Jua', sans-serif;
+  
+}
+
+#center {
+      width: 50%;
+
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  margin:auto;
+}

@@ -13,11 +13,23 @@ h1, h2{
 }
 
 #center {
-      width: 50%;
+      width: 80%;
 
   top:0px;
   left:0px;
   right:0px;
   bottom:0px;
   margin:auto;
+}
+
+.emoji{
+    
+    width:30%;
+    height:30%;
+        display:inline;
+
+}
+
+form {
+    
 }

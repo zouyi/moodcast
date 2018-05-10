@@ -115,9 +115,17 @@ i {
 }
 
 #dayButton:hover {
-        text-decoration: underline;
+    border-bottom: 10px solid white;
+    -webkit-animation-name: underline; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 2s;
 
-    
+}
+
+@keyframes underline {
+    from {width: 0%;}
+    to {width: 100%;}
 }
 
 

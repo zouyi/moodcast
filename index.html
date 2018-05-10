@@ -4,23 +4,35 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Emotion Tracker</title>
-        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <title>Mood Cast</title>
+        <meta name="description" content="An interactive mood collector.">
         <link rel="stylesheet" href="index.css">
       
-      <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
-    </head>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> </head>
     <body>
       <div id="center">
                  <form method="post" action="http://localhost:3000/login">
 
-        <h1>Hello, what is your name?</h1>
-      
-       <input type='text' name='fname' id='fname' required>
-        <h2>How you are feeling today?</h2>
-      
-       <h2>I'm feeling ...</h2>
-           <input class="emoji" id="happy" type="image" alt="happy"
+        <h1>MOODCAST .<img src="resources/heart.svg"></h1>
+       <h2 id="dayButton">Daily</h2>
+        <h2 id="weekButton">Weekly</h2>
+        <h2 id="indiButton">Individuals</h2>
+
+            <div id="display">
+                <div id="month"></div>
+                <div id="date"></div>
+                <div id="weekday"></div>
+                <div id="currMood"></div>                
+                <i class="left" id="leftArrow"></i>
+                <i class="right" id="rightArrow"></i>
+            </div>
+                     
+         
+
+        <h2>Help others to know what the world is feeling by sharing your mood here. </h2>
+        <input type='text' name='fname' id='fname' required>
+                     
+                       <input class="emoji" id="happy" type="image" alt="happy"
   src="resources/happy.png">
         
          <input class="emoji" id="scared" type="image" alt="scared"
@@ -38,7 +50,6 @@
   src="resources/disgust.png">
         <div class="caption"><br>Disgust</div>
 
-           
            
           
 </form>

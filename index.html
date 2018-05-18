@@ -7,13 +7,13 @@
         <title>Mood Cast</title>
         <meta name="description" content="An interactive mood collector.">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" type="text/css" href="css/lib/control/iconselect.css" >
       
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> </head>
     <body>
       <div id="center">
-                 <form method="post" action="http://localhost:3000/login">
 
-        <h1>MOODCAST .<img src="imgs/heart.svg"></h1>
+        <h1>MOODCAST  <img src="imgs/heart.svg"></h1>
         <h2 id="subtitle">The world is feeling today</h2>
                      
         <div id="category">
@@ -48,28 +48,29 @@
                      
          
         <div id="emotionInput">
-            <h2>Help others to know how the world is feeling by sharing your mood</h2>
+            <h2>Type your name and enter your mood down below</h2>
             
             <div id="userInputs">
             <label for="uname">Name</label><input type='text' name='uname' id='uname' class="text-line" placeholder="Anonymous"  required>
                 
             <br><br>
-            <label for="uname">I am feeling</label>
+            <label for="uname">I am feeling</label><div id="my-icon-select"></div>
+           
                 
-                <select name="umood" id="moodSelect" required>
-  <option style="background-image:url("imgs/happy.png");">happy</option>
-  <option style="background-image:url("imgs/sad.jpg");">sad</option>
-  <option style="background-image:url("imgs/fear.svg");">scared</option>
-</select> 
-                
-                     
-            <label for="ucontent">About</label>
+            <label id="about" for="ucontent">about</label>
             <input type='text' name='ucontent' id='ucontent' class="text-line2" placeholder="(exams, grandma's cake, a movie, an event, anything)" >
                 
         </div>
-
+        </div>
+        </div>
     </body>
   
   <script src="index.js"></script>
+    
+           <script type="text/javascript" src="lib/control/iconselect.js"></script>
+        
+        <script type="text/javascript" src="lib/iscroll.js"></script>
+  <script src="js/icon.js"></script>
+                     
 </html>
 

@@ -263,7 +263,7 @@ i {
 }
 #ucontent {
     width:500px;
-    font-size:20pt;
+    font-size:15pt;
 }
 
 .text-line2 {
@@ -300,9 +300,23 @@ font-family: 'Roboto', sans-serif;
    color: white;
 }
 
-select#moodSelect option[value="happy"]   { background-image:url(happy.png);   }
-select#moodSelect option[value="sad"] { background-image:url(sad.jpg); }
-select#moodSelect option[value="scared"] { background-image:url(fear.svg); }
+#my-icon-select{
+    display:inline-block;
+}
+
+#about{
+    top:100px;
+    position:absolute;
+    left:200px;
+}
+
+#ucontent{
+        top:100px;
+
+    position:absolute;
+    left:260px;
+}
+
 
 
 

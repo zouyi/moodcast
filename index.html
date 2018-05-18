@@ -8,53 +8,65 @@
         <meta name="description" content="An interactive mood collector.">
         <link rel="stylesheet" href="index.css">
       
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> </head>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> </head>
     <body>
       <div id="center">
                  <form method="post" action="http://localhost:3000/login">
 
-        <h1>MOODCAST .<img src="resources/heart.svg"></h1>
+        <h1>MOODCAST .<img src="imgs/heart.svg"></h1>
+        <h2 id="subtitle">The world is feeling today</h2>
+                     
+        <div id="category">
        <h2 id="dayButton">Daily</h2>
+        <div id="dayline"></div>
         <h2 id="weekButton">Weekly</h2>
+        <div id="weekline"></div>
+
         <h2 id="indiButton">Individuals</h2>
+        <div id="indiline"></div>
+
+        </div>
 
             <div id="display">
                 <div id="month"></div>
                 <div id="date"></div>
                 <div id="weekday"></div>
-                <div id="currMood"></div>                
+                
+                
+                <img class="emoji" id="mainmood" type="image" alt="mainmood" src="imgs/happy.png"><div id="mainstat">85% happy</div>   
+   
+                
+                   <img class="emoji" id="submood" type="image" alt="happy" src="imgs/sad.jpg"><div id="substat">15% sad</div>          
+            
+               
                 <i class="left" id="leftArrow"></i>
                 <i class="right" id="rightArrow"></i>
+                
+                <div id="summary">The world is feeling 85% happy, 15% sad</div>   
+
             </div>
                      
          
-
-        <h2>Help others to know what the world is feeling by sharing your mood here. </h2>
-        <input type='text' name='fname' id='fname' required>
+        <div id="emotionInput">
+            <h2>Help others to know how the world is feeling by sharing your mood</h2>
+            
+            <div id="userInputs">
+            <label for="uname">Name</label><input type='text' name='uname' id='uname' class="text-line" placeholder="Anonymous"  required>
+                
+            <br><br>
+            <label for="uname">I am feeling</label>
+                
+                <select name="umood" id="moodSelect" required>
+  <option style="background-image:url("imgs/happy.png");">happy</option>
+  <option style="background-image:url("imgs/sad.jpg");">sad</option>
+  <option style="background-image:url("imgs/fear.svg");">scared</option>
+</select> 
+                
                      
-                       <input class="emoji" id="happy" type="image" alt="happy"
-  src="resources/happy.png">
-        
-         <input class="emoji" id="scared" type="image" alt="scared"
-  src="resources/fear.svg">
-           
-         <input class="emoji" id="sad" type="image" alt="sad"
-  src="resources/sad.jpg">
-           
-         <input class="emoji" id="anger" type="image" alt="anger"
-  src="resources/angry.png">
-            <div class="caption"><br>Anger</div>
-
-
-         <input class="emoji" id="disgust" type="image" alt="disgust"
-  src="resources/disgust.png">
-        <div class="caption"><br>Disgust</div>
-
-           
-          
-</form>
-        
-              </div>
+            <label for="ucontent">About</label>
+            <input type='text' name='ucontent' id='ucontent' class="text-line2" placeholder="(exams, grandma's cake, a movie, an event, anything)" >
+                
+        </div>
 
     </body>
   

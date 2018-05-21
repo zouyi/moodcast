@@ -1,0 +1,131 @@
+#emotionInput{
+    position:relative;
+  top:150px;
+  text-align: center;
+}
+
+#emotionInput h3{
+    position:absolute;
+    top:500px;
+}
+
+#userInputs{
+    
+    position:absolute;
+    top:580px;
+    left:0px;
+  right:0px;
+}
+
+.text-line {
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 2px;
+    padding: 3px 20px;
+}
+
+#uname {
+        font-size:18pt;
+    width:140px;
+  position:absolute;
+}
+
+#nameinput {
+  position:relative;
+  left:-180px;
+}
+
+#ucontent {
+    width:500px;
+    font-size:15pt;
+}
+
+.text-line2 {
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 2px;
+    padding: 3px 10px;
+}
+
+
+label{
+     font-size:17pt;
+  color:white;
+font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    display:inline-block;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: white;
+}
+
+#foruname{
+  
+  position: relative;
+  top:0px;
+  left:140px;
+}
+
+#my-icon-select{
+    display:inline-block;
+  position:relative;
+  left:140px;
+}
+
+#about{
+  display: inline;
+  position: relative;
+  top:0px;
+  left:210px;
+}
+
+#ucontent{
+     display: inline;
+  position: relative;
+  top:0px;
+  left:200px;
+
+}
+
+#emotionSelection {
+  position:relative;
+  left:360px;
+}
+
+#emotionSelection td{
+    color:white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#submit{
+ top:100px;
+  position: relative;
+  
+  
+}
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+
+
+#display {
+  position:relative;
+  top:360px;
+}
+
+
+#month{
+        font-size:35pt;
+
+}
+
+#date{
+        font-size:50pt;
+
+}
+
+#weekday{
+        font-size:30pt;
+
+}
+#date {
+    display:inline-block;
+}
+
+#mainmood{
+    position:absolute;
+    top:250px;
+    left:40%;
+    right:0px;
+    width:9%;
+    height:auto;
+}
+
+#submood{
+    
+      position:absolute;
+    top:370px;
+    left:42%;
+    right:0px;
+    width:5%;
+    height:auto;
+}
+
+#mainstat{
+    position:relative;
+    left:110px;
+    top:60px;
+    font-size:30pt;
+}
+
+#substat{
+    position:relative;
+    top:110px;
+    left:50px;
+        font-size:23pt;
+}
+
+#summary{
+  position:relative;
+  top:10px;
+  left:0px;
+  font-size:25pt;
+}
+
+

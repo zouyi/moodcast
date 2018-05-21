@@ -23,19 +23,16 @@ var indiline = document.getElementById("indiline");
 
 dayButt.addEventListener("mouseover", function(){
     
-    dayline.style.animation = "underline 0.5s";
     
 })
 
 weekButt.addEventListener("mouseover", function(){
     
-    weekline.style.animation = "underline2 2s";
     
 })
 
 indiButt.addEventListener("mouseover", function(){
     
-    indiline.style.animation = "underline3 2s";
     
 })
 

@@ -82,15 +82,14 @@ app.post('/sendForm', function(req, res) {
     fs.writeFile('moodlist.json', json, 'utf8'); // write it back 
 }});
   
-  
-  
+     res.sendFile(path.join(__dirname + '/index.html'));
 
-  
+  /*
           res.send('<h1>Name:'+name+'</h1><br>'+
                    '<h1>Emotion:'+emotion+'</h1><br>'+
                    '<h1>Content:'+content+'</h1><br>'
             
-                );
+                );*/
 
     
   /*
@@ -130,6 +129,197 @@ app.get("/dailyStats", function(req, resp){
 })
 
 
+app.get("/dailyMood", function(req, resp){
+
+       
+  fs.readFile('moodlist.json', 'utf8', function readFileCallback(err, data){
+    if (err){
+        console.log(err);
+    } else {
+    obj = JSON.parse(data); //now it an object
+    //json = JSON.stringify(obj);
+    var curDay = date.getDay();
+    var curDate = date.getDate();
+    var curMonth = date.getMonth();
+    var curYear = date.getFullYear();
+  
+            console.log(curDay);
+
+      console.log(typeof(curDay));
+    var jDay;
+    var jDate;
+    var jMonth;
+    var jYear;
+
+    var moodArr = [0,0,0,0,0,0];
+    var moodCount = 0;
+     
+     var objlength = obj.moodlist.length;
+      
+      for(var i=0;i<objlength;i++){
+        
+          jDay = obj.moodlist[i].day;
+                    //console.log("json day is"+ typeof(jDay));
+
+          jDate = obj.moodlist[i].date;
+          jMonth = obj.moodlist[i].month;
+          jYear = obj.moodlist[i].year;
+          jMood = obj.moodlist[i].mood;
+          
+          if(curDay == jDay && curDate == jDate && curMonth == jMonth && curYear == jYear){
+            console.log(curDate+" "+jDay);
+
+            if(jMood == 1){
+              
+             moodArr[0]++;
+              moodCount++;
+              
+            } else if(jMood==2){
+              moodArr[1]++;
+              moodCount++;
+
+              
+            }else if(jMood==3){
+              
+              moodArr[2]++;
+              moodCount++;
+
+              
+            }else if(jMood==4){
+              
+             moodArr[3]++;
+               moodCount++;
+              
+            }else if(jMood==5){
+              
+              moodArr[4]++;
+               moodCount++;
+              
+            }else if(jMood==6){
+              
+              moodArr[5]++;
+               moodCount++;
+            }
+          }
+        }
+      
+      console.log(moodCount);
+      console.log(moodArr);
+      
+      
+      var maxIndex = indexOfMax(moodArr);
+      var maxIndex2 = secondMax(moodArr);
+      resp.render(__dirname + "/index.html", {firstmood:maxIndex, secondmood: maxIndex2, moodcount:moodCount});
+      
+      
+      
+      
+      
+      
+      //resp.send(json);
+}});
+  
+
+    
+})
+
+
+/*
+
+app.get("/dailyMood", function(req, resp){
+  
+  //you should only get mood for the currentDay  
+  
+
+  
+          
+  fs.readFile('moodlist.json', 'utf8', function readFileCallback(err, data){
+    if (err){
+        console.log(err);
+    } else {
+    obj = JSON.parse(data); //now it an object
+     
+}});
+  
+    var curDay = date.getDay();
+    var curDate = date.getDate();
+    var curMonth = date.getMonth();
+    var curYear = date.getFullYear();
+  
+    var jDay;
+    var jDate;
+    var jMonth;
+    var jYear;
+
+    var moodArr = [0,0,0,0,0,0];
+    var moodCount = 0;
+     
+     var objlength = obj.moodlist.length;
+      
+      for(var i=0;i<objlength;i++){
+        
+          jDay = obj.moodlist[i].day;
+          jDate = obj.moodlist[i].date;
+          jMonth = obj.moodlist[i].month;
+          jYear = obj.moodlist[i].year;
+          jMood = obj.moodlist[i].mood;
+          
+          if(curDay == jDay && curDate == jDate
+            && curMonth == jMonth && curYear == jYear){
+            
+            if(jMood == 1){
+              
+             moodArr[1]++;
+              moodCount++;
+              
+            } else if(jMood==2){
+              moodArr[2]++;
+              moodCount++;
+
+              
+            }else if(jMood==3){
+              
+              moodArr[3]++;
+              moodCount++;
+
+              
+            }else if(jMood==4){
+              
+             moodArr[4]++;
+               moodCount++;
+              
+            }else if(jMood==5){
+              
+              moodArr[5]++;
+               moodCount++;
+              
+            }else if(jMood==6){
+              
+              moodArr[6]++;
+               moodCount++;
+            }
+          }
+        }
+      
+      console.log(moodCount);
+      console.log(moodArr);
+      
+      
+      var maxIndex = indexOfMax(moodArr);
+      var maxIndex2 = secondMax(moodArr);
+      resp.render(__dirname + "/index.html", {firstmood:maxIndex, secondmood: maxIndex2, moodcount:moodCount});
+      
+      //json = JSON.stringify(obj);
+      //resp.send(json);
+})
+  
+
+    
+*/
+
+
+
+
 app.get("/awesome", function(req, resp){
     
     resp.send("YOU ARE AWESOME");
@@ -164,3 +354,30 @@ app.listen(port, function(err){
     
     
 });
+
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
+}
+
+
+var secondMax = function (arr){ 
+    var max = Math.max.apply(null, arr); // get the max of the array
+    arr.splice(arr.indexOf(max), 1); // remove max from the array
+    return Math.max.apply(null, arr); // get the 2nd max
+};
+
+

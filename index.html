@@ -19,8 +19,7 @@
         <h1>MOODCAST <img src="imgs/heart.svg"></h1>
         <h3>See how the world is feeling</h3>
                  <div id="category">
-       <h2 id="dayButton">Daily</h2>
-        <div id="dayline"></div>
+        <button id="dayButton">Daily</button>
         <button id="statsButton">Daily Stats</button>
       
         <h2 id="indiButton">Individuals</h2>
@@ -28,7 +27,9 @@
 
         </div>            
       </div>
-     <canvas id="myChart"></canvas>
+
+     <canvas id="newChart"></canvas>
+
 
             <div id="display">
                 <div id="month"></div>
@@ -44,10 +45,15 @@
                 <i class="right" id="rightArrow"></i>
                 
             </div>
+      
+        <div id="displayStatus">
+      
+                
+            </div>
          
             <br>
-     
-            <form method="post" action="sendForm" id="emotionSelection">  
+        <div id="myform">
+       <form method="post" action="sendForm/" id="emotionSelection">  
               <p>Type your name and enter your mood down below</p>
               <div class="formtxt">Name: </div>
               <input type='text' name='uname' id='uname' class="text-line" placeholder="anonymous" required><br><br><br>
@@ -73,6 +79,8 @@
           <button id="submit">Submit</button>
               
               </form>
+      </div>
+           
     </body>
   
   <script src="index.js"></script>

@@ -87,23 +87,7 @@ i {
   padding: 3px;
 }
 
-.right {
-    position:absolute;
-    right:280px;
-      width:20px;
-    height:20px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-}
 
-.left {
-    position:absolute;
-    left:280px;
-    width:20px;
-    height:20px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-}
 
 .up {
     transform: rotate(-135deg);
@@ -125,7 +109,7 @@ i {
 
 #dayButton {
   position:absolute;
-  left:-300px;
+  left:0px;
     cursor: pointer;
 
 }

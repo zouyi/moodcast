@@ -28,13 +28,10 @@ statsButton.addEventListener("click", function(){
   //alert("clicked");
     $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
     
-        //console.log(typeof(result));
+        console.log(typeof(result));
       var userObj = JSON.parse(result);
-              //console.log(userObj.length);
-          //$("#display").html(result);
-          //newBar(result);
-      
-         var objlength = Object.keys(userObj.moodlist).length;
+    
+      var objlength = Object.keys(userObj.moodlist).length;
     var selection = 0;
 
       var happyCount = 0;
@@ -43,7 +40,6 @@ statsButton.addEventListener("click", function(){
       var disgustCount = 0;
       var angryCount = 0;
       var exhaustCount = 0;
-  
   
      for(i=0;i<objlength;i++){        
         selection = userObj.moodlist[i].mood;
@@ -62,14 +58,10 @@ statsButton.addEventListener("click", function(){
         
           disgustCount++;
 
-        
-        
         }else if(selection ==5){
           angryCount++;
 
-        
-        
-          }else if(selection ==6){
+        }else if(selection ==6){
             exhaustCount++;
 
           }
@@ -86,6 +78,7 @@ statsButton.addEventListener("click", function(){
         "Angry", 
         "Exhausted"],
       datasets: [{
+        label:["Emotion"],
         backgroundColor: ["#E74C3C", "#52BE80","#F4D03F","#1F618D","#8A2BE2","#00FFFF"],
         data: [happyCount, 
                sadCount, 
@@ -96,9 +89,12 @@ statsButton.addEventListener("click", function(){
       }]
     },
     options: {
+       legend: {
+        display: false
+    },
       title: {
         display: true,
-        text: 'Bar Diagram'
+        text: 'Mood for the day'
       }
     }
     });  
@@ -106,10 +102,10 @@ statsButton.addEventListener("click", function(){
   
  
 });
-  
 
-      
-
+dayButt.addEventListener("click", function(){
+  dayCast();
+})
 
 indiButt.addEventListener("click", function(){
   
@@ -137,7 +133,7 @@ indiButt.addEventListener("click", function(){
 
         }else if(selection ==3){
           
-                     statusLine= statusLine+' scared ';
+          statusLine= statusLine+' scared ';
 
 
       }else if(selection ==4){
@@ -168,14 +164,23 @@ indiButt.addEventListener("click", function(){
       
 });
 
+function dayCast(){
+  //find dates that matches current day
+   $.ajax({url:"http://localhost:3000/dailyMood", success: function(result){
+    var firstMood = "<%= firstmood %>";
+    var secondMood = "<%= secondmood %>";
+    var moodsum = "<%= moodcount %>";
+     
+    console.log(firstMood+secondMood+moodsum);
+  
+   }
+          })
+}
+
 function newBar(result) {
   
    
 }
-
-
-
-
 
 indiButt.addEventListener("mouseover", function(){
     

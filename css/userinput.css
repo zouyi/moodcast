@@ -106,10 +106,15 @@ font-family: 'Roboto', sans-serif;
 
 }
 
-#emotionSelection {
+#myform{
   position:relative;
-  top:600px;
-  left:360px;
+  top:-500px;
+}
+
+#emotionSelection {
+  position:absolute;
+  top:1000px;
+  left:26%;
 }
 
 #emotionSelection td{

@@ -3,8 +3,79 @@
 #display {
   position:relative;
   top:360px;
+  overflow-y:auto;
+  overflow-x: hidden;
+  height: 500px;
+  width:50vw;
+  left:25vw;
+  right:25vw;
+  background-color:#008ae6;
+  border-radius: 20px;
+  padding:20px;
 }
 
+#displayStatus {
+  position:relative;
+  top:360px;
+  overflow-y:auto;
+  overflow-x: hidden;
+  height: 500px;
+  width:50vw;
+  left:25vw;
+  right:25vw;
+  background-color:#008ae6;
+  border-radius: 20px;
+  padding:20px;
+  display: none;
+}
+
+.right {
+    position:absolute;
+    right:80px;
+      width:30px;
+    height:30px;
+top: 250px;
+  transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  cursor:pointer;
+}
+
+.left {
+    position:absolute;
+    left:80px;
+  top: 250px;
+
+    width:30px;
+    height:30px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    cursor:pointer;
+
+}
+
+i.left:hover{
+  animation: shake 0.82s infinite;
+
+
+}
+
+i.right:hover{
+    animation: shake 0.82s infinite;
+
+  
+}
+
+@keyframes shake {
+  0% {
+    top:250px;
+  }
+  50% {
+    top: 241px;
+  }
+  100%{
+    top:250px;
+  }
+}
 
 #month{
         font-size:35pt;
@@ -62,6 +133,22 @@
   top:10px;
   left:0px;
   font-size:25pt;
+}
+
+.chart-container{
+  width:50%;
+  left:0px;
+}
+canvas{
+  display: none;
+  position:relative;
+  top:300px;
+  left:25vw;
+  right:25vw;
+  background-color:white;
+
+   width:50vw !important;
+  height:400px !important;
 }
 
 

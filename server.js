@@ -139,7 +139,8 @@ app.get("/dailyMood", function(req, resp){
     obj = JSON.parse(data); //now it an object
     //json = JSON.stringify(obj);
     var curDay = date.getDay();
-    var curDate = date.getDate();
+    //var curDate = date.getDate();
+        var curDate = 21;
     var curMonth = date.getMonth();
     var curYear = date.getFullYear();
   
@@ -166,8 +167,10 @@ app.get("/dailyMood", function(req, resp){
           jYear = obj.moodlist[i].year;
           jMood = obj.moodlist[i].mood;
           
-          if(curDay == jDay && curDate == jDate && curMonth == jMonth && curYear == jYear){
-            console.log(curDate+" "+jDay);
+                      console.log("current dayte is:"+curDate+ "current jday:"+jDate+"jmood is"+jMood);
+
+          
+          if(curDate == jDate && curMonth == jMonth && curYear == jYear){
 
             if(jMood == 1){
               

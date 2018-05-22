@@ -145,7 +145,7 @@ i {
 }
 
 #dayButton:hover {
-    border-bottom: 3px solid white;
+   /* border-bottom: 3px solid white;*/
     -webkit-animation-name: underline; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
     animation-name: underline;
@@ -154,7 +154,7 @@ i {
 }
 
 #weekButton:hover {
-    border-bottom: 3px solid white;
+   /* border-bottom: 3px solid white;*/
     -webkit-animation-name: underline2; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
     animation-name: underline2;
@@ -163,7 +163,7 @@ i {
 }
 
 #indiButton:hover {
-    border-bottom: 3px solid white;
+   /* border-bottom: 3px solid white;*/
     -webkit-animation-name: underline3; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
     animation-name: underline3;
@@ -171,6 +171,7 @@ i {
 
 }
 
+/*
 @keyframes underline {
     from {width: 0px;}
     to {width: 86.33px;}
@@ -186,7 +187,7 @@ i {
     from {width: 0px;}
     to {width: 191px;}
 }
-
+*/
 
 
 #moodDisp {

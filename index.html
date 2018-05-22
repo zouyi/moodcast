@@ -6,36 +6,36 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mood Cast</title>
         <meta name="description" content="An interactive mood collector.">
+      <base href="/">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="css/display.css">
         <link rel="stylesheet" href="css/userinput.css">
-        <link rel="stylesheet" type="text/css" href="css/lib/control/iconselect.css" >
+
       
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> </head>
     <body>
       
       <div id="header">
-        <h1>MOODCAST  <img src="imgs/heart.svg"></h1>
+        <h1>MOODCAST <img src="imgs/heart.svg"></h1>
         <h3>See how the world is feeling</h3>
                  <div id="category">
        <h2 id="dayButton">Daily</h2>
         <div id="dayline"></div>
-        <h2 id="weekButton">Weekly</h2>
-        <div id="weekline"></div>
-
+        <button id="statsButton">Daily Stats</button>
+      
         <h2 id="indiButton">Individuals</h2>
         <div id="indiline"></div>
 
         </div>            
       </div>
-    
+     <canvas id="myChart"></canvas>
+
             <div id="display">
                 <div id="month"></div>
                 <div id="date"></div>
                 <div id="weekday"></div>
             <div id="summary">The world is feeling</div>   
 
-                
                 <img class="emoji" id="mainmood" type="image" alt="mainmood" src="imgs/happy.png"><div id="mainstat">85% happy</div>   
                 <img class="emoji" id="submood" type="image" alt="happy" src="imgs/sad.jpg"><div id="substat">15% sad</div>          
             
@@ -44,53 +44,45 @@
                 <i class="right" id="rightArrow"></i>
                 
             </div>
-                     
          
-        <div id="emotionInput">
-            <h3>Type your name and enter your mood down below</h3>
-            
-            <div id="userInputs">
-              <div id="nameinput"><label for="uname">Name</label></div>
-         
-                
-            <br><br>
+            <br>
      
-           
+            <form method="post" action="sendForm" id="emotionSelection">  
+              <p>Type your name and enter your mood down below</p>
+              <div class="formtxt">Name: </div>
+              <input type='text' name='uname' id='uname' class="text-line" placeholder="anonymous" required><br><br><br>
+              <div class="formtxt">I am feeling: </div><br>
+                
+              <table>
+                <tr><td><img src="imgs/happy.png" alt="Smiley face"></td><td><img src="imgs/sad.jpg" alt="Sad face"></td><td><img src="imgs/fear.svg" alt="Smiley face"></td><td><img src="imgs/disgust.png" alt="Smiley face"></td></tr>
+                
+              <tr><td><input type="radio" name="emotion" value="1">Happy</td>
+                <td><input type="radio" name="emotion" value="2">Sad</td>
+                <td><input type="radio" name="emotion" value="3">Scared</td>
+                <td><input type="radio" name="emotion" value="4">Disgust</td></tr>
               
-              <table id="emotionSelection">
+              <tr><td><img src="imgs/angry.png" alt="Smiley face"></td><td><img src="imgs/sleepy.png" alt="Smiley face"></td></tr>
                 
-                <tr><td>Name</td><td><input type='text' name='uname' id='uname' class="text-line" placeholder="Anonymous" required></td></tr>
-                
-                <tr><td>I am feeling</td></tr>
-
-                <tr><td><img src="imgs/happy.png" alt="Smiley face" height="42" width="42"></td><td><img src="imgs/sad.jpg" alt="Sad face" height="42" width="42"></td><td><img src="imgs/disgust.png" alt="Smiley face" height="42" width="42"></td><td><img src="imgs/fear.svg" alt="Smiley face" height="42" width="42"></td></tr>
-                
-                  <tr><td><input type="radio" name="happy" value="1">Happy</td><td><input type="radio" name="sad" value="2">Sad</td><td><input type="radio" name="disgust" value="3">Disgust</td><td><input type="radio" name="fear" value="4">Scared</td></tr>
-                
-                
-                <tr><td><img src="imgs/angry.png" alt="Smiley face" height="42" width="42"></td><td><img src="imgs/sleepy.png" alt="Smiley face" height="42" width="42"></td></tr>
-                
-                <tr><td><input type="radio" name="anger" value="5">Angry</td><td><input type="radio" name="exhaustion" value="6">Exhausted</td></tr>
-                
-                
-                <tr><td>about</td><td></td></tr>
+                <tr><td><input type="radio" name="emotion" value="5">Angry</td>
+                <td><input type="radio" name="emotion" value="6">Exhausted</td></tr>
               </table>
-
-
-              
-           
-          <label id="about" for="ucontent">about</label>
+              <br><br>
+          
+        <label id="about" for="ucontent">about</label>
             <input type='text' name='ucontent' id='ucontent' class="text-line2" placeholder="(exams, grandma's cake, a movie, an event, anything)" >
           <button id="submit">Submit</button>
-        </div>
-        </div>
+              
+              </form>
     </body>
   
   <script src="index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script>
     
-        <script type="text/javascript" src="lib/control/iconselect.js"></script>
-        <script type="text/javascript" src="lib/iscroll.js"></script>
-  <script src="js/icon.js"></script>
-                     
+
+    
+
 </html>
 

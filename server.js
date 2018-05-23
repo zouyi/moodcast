@@ -211,8 +211,30 @@ app.get("/dailyMood", function(req, resp){
       
       
       var maxIndex = indexOfMax(moodArr);
-      var maxIndex2 = secondMax(moodArr);
-      resp.render(__dirname + "/index.html", {firstmood:maxIndex, secondmood: maxIndex2, moodcount:moodCount});
+      
+      var maxMoodCount = moodArr[maxIndex];
+      
+      
+      moodArr[maxIndex] = 0;
+      console.log(moodArr);
+      
+      var maxIndex2 = indexOfMax(moodArr);
+      var maxMoodCount2 = moodArr[maxIndex2];
+
+            console.log("max mood is:"+maxIndex);
+            console.log("max mood2 is:"+maxIndex2);
+      
+      
+      var moodObj = {
+        firstmood:(maxIndex+1),
+        secondmood:(maxIndex2+1),
+        moodcount1:maxMoodCount,
+        moodcount2:maxMoodCount2,
+        totalmood:moodCount
+      };
+      //console.log(moodArr);
+      json = JSON.stringify(moodObj);
+      resp.send(json);
       
       
       

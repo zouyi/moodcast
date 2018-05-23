@@ -31,7 +31,7 @@
 #uname {
         font-size:18pt;
     width:140px;
-  position:absolute;
+  display: inline-block;
 }
 
 #nameinput {
@@ -108,7 +108,16 @@ font-family: 'Roboto', sans-serif;
 
 #myform{
   position:relative;
-  top:-500px;
+  top:-640px;
+  margin-bottom:500px;
+}
+
+p{
+  
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  font-size:17pt;
+
 }
 
 #emotionSelection {
@@ -123,7 +132,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 #submit{
- top:100px;
+ left:20px;
   position: relative;
 }
 
@@ -158,6 +167,7 @@ td img{
   color:white;
 font-family: 'Roboto', sans-serif;
     font-weight:400;
+  display:inline;
   
 }
 

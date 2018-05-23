@@ -6,6 +6,13 @@ var weekdays=["Sun","Mon","Tue","Wed","Thur",
                 "Fri","Sat"];
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
+var moodArr = ['happy', 'sad', 'scared', 'disgust', 'angry', 'exhausted'];
+
+//Display session
+
+var mainstat = document.getElementById("mainstat");
+var secondstat = document.getElementById("secondstat");
+
 var leftButton = document.getElementById("leftArrow");
 var rightButton = document.getElementById("rightArrow");
 
@@ -22,6 +29,12 @@ var weekline = document.getElementById("weekline");
 var indiline = document.getElementById("indiline");
 
 var submitButton = document.getElementById("submit");
+
+window.onload = function(){
+  dayCast();
+  
+}
+
 
 statsButton.addEventListener("click", function(){
 
@@ -167,14 +180,32 @@ indiButt.addEventListener("click", function(){
 function dayCast(){
   //find dates that matches current day
    $.ajax({url:"http://localhost:3000/dailyMood", success: function(result){
-    var firstMood = "<%= firstmood %>";
-    var secondMood = "<%= secondmood %>";
-    var moodsum = "<%= moodcount %>";
+        //console.log(result);
+        var moodObj = JSON.parse(result);
+        //console.log(moodObj);
+
+        var firstmood = moodObj.firstmood;
+        var secondmood = moodObj.secondmood;
+        var moodcount1 = moodObj.moodcount1;
+        var moodcount2 = moodObj.moodcount2;
+        var totalmood = moodObj.totalmood;
      
-    console.log(firstMood+secondMood+moodsum);
+        console.log(firstmood);
+        console.log(secondmood);
+        
+          //console.log("mc1 is "+moodcount1);
+          //console.log("total mood is "+totalmood);
+
+        percent1 = (moodcount1/totalmood).toFixed(2)*100;
+         percent2 = (moodcount2/totalmood).toFixed(2)*100;
+     
+     mainstat.innerHTML = percent1 + " % " + moodArr[firstmood-1];
+     secondstat.innerHTML = percent2 + " % " + moodArr[secondmood-1];
+     //console.log(percent1);
+        //console.log(percent2);
   
-   }
-          })
+        }
+    })
 }
 
 function newBar(result) {

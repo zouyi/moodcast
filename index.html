@@ -18,13 +18,10 @@
       <div id="header">
         <h1>MOODCAST <img src="imgs/heart.svg"></h1>
         <h3>See how the world is feeling</h3>
-                 <div id="category">
-        <button id="dayButton">Daily</button>
-        <button id="statsButton">Daily Stats</button>
-      
-        <h2 id="indiButton">Individuals</h2>
-        <div id="indiline"></div>
-
+        <div id="category">
+          <button class="btn" id="dayButton">Daily</button>
+          <button class="btn" id="statsButton">Daily Stats</button>
+          <button class="btn" id="indiButton">Individual</button>
         </div>            
       </div>
 
@@ -35,10 +32,10 @@
                 <div id="month"></div>
                 <div id="date"></div>
                 <div id="weekday"></div>
-            <div id="summary">The world is feeling</div>   
+            <div id="summary">The world is</div>   
 
-                <img class="emoji" id="mainmood" type="image" alt="mainmood" src="imgs/happy.png"><div id="mainstat">85% happy</div>   
-                <img class="emoji" id="submood" type="image" alt="happy" src="imgs/sad.jpg"><div id="substat">15% sad</div>          
+                <img class="emoji" id="mainmood" type="image" alt="mainmood" src="imgs/happy.png"><div id="mainstat"></div>   
+                <img class="emoji" id="secondmood" type="image" alt="happy" src="imgs/sad.jpg"><div id="secondstat"></div>          
             
                
                 <i class="left" id="leftArrow"></i>
@@ -54,9 +51,8 @@
             <br>
         <div id="myform">
        <form method="post" action="sendForm/" id="emotionSelection">  
-              <p>Type your name and enter your mood down below</p>
-              <div class="formtxt">Name: </div>
-              <input type='text' name='uname' id='uname' class="text-line" placeholder="anonymous" required><br><br><br>
+              <p>Enter your name and mood for the day down below</p>
+              <div class="formtxt">Name: </div><input type='text' name='uname' id='uname' class="text-line" placeholder="anonymous" required><br><br><br>
               <div class="formtxt">I am feeling: </div><br>
                 
               <table>
@@ -76,7 +72,7 @@
           
         <label id="about" for="ucontent">about</label>
             <input type='text' name='ucontent' id='ucontent' class="text-line2" placeholder="(exams, grandma's cake, a movie, an event, anything)" >
-          <button id="submit">Submit</button>
+          <button class="btn" id="submit">Submit</button>
               
               </form>
       </div>
@@ -87,7 +83,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-<script>
+
     
 
     

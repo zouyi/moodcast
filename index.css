@@ -1,3 +1,6 @@
+
+
+
 body {
   
   background-color: #014E85;
@@ -14,7 +17,7 @@ h1{
   color:white;
   font-family: 'Roboto', sans-serif;
   font-weight:400;
-  left:0px;
+  left:100px;
   right:0px;
   position:absolute;
 }
@@ -22,7 +25,7 @@ h1{
 h1 img{
     width:90px;
     top:5px;
-    left:0px;
+    left:20px;
     display:inline-block;
     position:relative;
 
@@ -46,7 +49,7 @@ h3{
 font-family: 'Roboto', sans-serif;
     font-weight:400;
     display:inline-block;
-   left:0px;
+   left:80px;
   right:0px;
   top:166px;
   position:absolute;
@@ -106,73 +109,63 @@ i {
   text-align: center;
 }
 
+.btn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background:  #014E85;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+      border-width: 3px;
+  border-color:white;
+
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
 
 #dayButton {
-  position:absolute;
-  left:0px;
+  position:relative;
+  left:-40px;
+    top:90px;
+
     cursor: pointer;
 
 }
 
+#statsButton {
+  position:relative;
+  left:70px;
+  top:90px;
+    cursor: pointer;
+}
+
+
 #weekButton {
-  position:absolute;
+  position:relative;
   left:0px;
   right:0px;
     cursor: pointer;
 }
 
 #indiButton {
- position:absolute;
-  left:400px;
+  position:relative;
+  left:160px;
+  top:90px;
   right:0px;
     cursor: pointer;
 }
-
-#dayButton:hover {
-   /* border-bottom: 3px solid white;*/
-    -webkit-animation-name: underline; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-name: underline;
-    animation-duration: 1s;
-
-}
-
-#weekButton:hover {
-   /* border-bottom: 3px solid white;*/
-    -webkit-animation-name: underline2; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-name: underline2;
-    animation-duration: 1s;
-
-}
-
-#indiButton:hover {
-   /* border-bottom: 3px solid white;*/
-    -webkit-animation-name: underline3; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-name: underline3;
-    animation-duration: 1s;
-
-}
-
-/*
-@keyframes underline {
-    from {width: 0px;}
-    to {width: 86.33px;}
-}
-
-@keyframes underline2 {
-    from {width: 0px;}
-    to {width: 126.17px;}
-}
-
-
-@keyframes underline3 {
-    from {width: 0px;}
-    to {width: 191px;}
-}
-*/
-
 
 #moodDisp {
     

@@ -41,8 +41,8 @@ statsButton.addEventListener("click", function(){
   //alert("clicked");
     $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
     
-        console.log(typeof(result));
-      var userObj = JSON.parse(result);
+    console.log(typeof(result));
+    var userObj = JSON.parse(result);
     
       var objlength = Object.keys(userObj.moodlist).length;
     var selection = 0;

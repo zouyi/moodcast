@@ -1,10 +1,14 @@
-
-
+html {
+    height: 100%;
+}
 
 body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#33ccff), to(#ff99cc)) fixed !important;
+    background-repeat: no-repeat;
   
-  background-color: #014E85;
-
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
 }
 
 #header{
@@ -12,15 +16,16 @@ body {
   text-align: center;
 }
 
-h1{
-  font-size:70pt;
-  color:white;
-  font-family: 'Roboto', sans-serif;
+
+h1.myTitle{
+  font-size:60pt !important;
+  color:white !important;
+ font-family: 'Itim', cursive;
   font-weight:400;
-  left:100px;
-  right:0px;
-  position:absolute;
+  margin-top:30px;
+  
 }
+
 
 h1 img{
     width:90px;
@@ -33,17 +38,14 @@ h1 img{
 
 h2{
     font-size:30pt;
-  color:white;
-font-family: 'Roboto', sans-serif;
+  color:white !important;
+  font-family: 'Sawarabi Mincho', sans-serif !important;
     font-weight:400;
     display:inline-block;
-   left:0px;
-  right:0px;
-  top:60px;
-  position:absolute;
+  
 }
 
-h3{
+h3.myTitle3{
    font-size:20pt;
   color:white;
 font-family: 'Roboto', sans-serif;
@@ -54,6 +56,30 @@ font-family: 'Roboto', sans-serif;
   top:166px;
   position:absolute;
   
+}
+
+.form-control{
+  
+   background-color:rgba(0, 0, 0, 0) !important;
+    color:white !important;
+    border: 1.3px solid !important;
+    outline:none;
+    height:30px;
+    transition:height 1s;
+    -webkit-transition:height 1s;
+}
+
+::placeholder {
+    color: white !important;
+    opacity: 0.6 !important; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: white;
 }
 
 

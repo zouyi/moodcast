@@ -1,1 +1,13 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><style>.cls-1{fill:#ffaeae;}.cls-2{fill:#f97878;}</style></defs><title>Artboard 1</title><path class="cls-1" d="M594.5,324C560,220.45,437,233.62,437,340.84,437,434,568.1,475.25,594.5,511,620.9,475.25,752,434,752,340.84,752,233.62,629,220.45,594.5,324Z"/><path class="cls-2" d="M594.5,324c-.29-.67-5.08-13-5.38-13.68-18.59-40.76-52.35-59.19-83.37-57.19C544.83,258.33,576.5,278.67,594.5,324Z"/><path class="cls-2" d="M674.25,253.13c36.26,2.35,68.75,32.6,68.75,87.71,0,88.69-118.82,130.33-153,165a48.12,48.12,0,0,1,4.5,5.19C620.9,475.25,752,434,752,340.84,752,281.21,714,250.69,674.25,253.13Z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFAEAE;}
+	.st1{fill:#F97878;}
+</style>
+<title>Artboard 1</title>
+<path class="st0" d="M594.5,324C560,220.4,437,233.6,437,340.8C437,434,568.1,475.3,594.5,511C620.9,475.3,752,434,752,340.8
+	C752,233.6,629,220.4,594.5,324z"/>
+<path class="st1" d="M594.5,324C629,220.5,752,233.6,752,340.9C752,434,620.9,475.3,594.5,511V324z"/>
+</svg>

@@ -58,6 +58,22 @@ font-family: 'Roboto', sans-serif;
   
 }
 
+h5{
+	 color:white !important;
+  font-family: 'Sawarabi Mincho', sans-serif !important;
+    font-weight:400;
+}
+
+.span-text{
+		 color:white !important;
+  font-family: 'Sawarabi Mincho', sans-serif !important;
+    font-weight:400;
+}
+
+.ifeel{
+	display:inline;
+}
+
 .form-control{
   
    background-color:rgba(0, 0, 0, 0) !important;
@@ -80,6 +96,10 @@ font-family: 'Roboto', sans-serif;
 
 ::-ms-input-placeholder { /* Microsoft Edge */
    color: white;
+}
+
+#inputdefault {
+	width:200px;
 }
 
 

@@ -16,14 +16,15 @@ var secondstat = document.getElementById("secondstat");
 var leftButton = document.getElementById("leftArrow");
 var rightButton = document.getElementById("rightArrow");
 
-weekDay.innerHTML = weekdays[d.getDay()];
-curMonth.innerHTML = months[d.getMonth()];
-curDate.innerHTML = d.getDate();
+//weekDay.innerHTML = weekdays[d.getDay()];
+//curMonth.innerHTML = months[d.getMonth()];
+//curDate.innerHTML = d.getDate();
 
 var dayButt = document.getElementById("dayButton");
-var statsButton = document.getElementById("statsButton");
+var totalButton = document.getElementById("total");
 var weekButt = document.getElementById("weekButton");
-var indiButt = document.getElementById("indiButton");
+var indiButt = document.getElementById("indi");
+
 var dayline = document.getElementById("dayline");
 var weekline = document.getElementById("weekline");
 var indiline = document.getElementById("indiline");
@@ -31,12 +32,12 @@ var indiline = document.getElementById("indiline");
 var submitButton = document.getElementById("submit");
 
 window.onload = function(){
-  dayCast();
+
   
 }
 
 
-statsButton.addEventListener("click", function(){
+totalButton.addEventListener("click", function(){
 
   //alert("clicked");
     $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
@@ -116,57 +117,46 @@ statsButton.addEventListener("click", function(){
  
 });
 
-dayButt.addEventListener("click", function(){
-  dayCast();
-})
-
-indiButt.addEventListener("click", function(){
-  
-    $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
-    
-        //console.log(typeof(result));
-      var userObj = JSON.parse(result);
+$("#indi").click(function(){
+      $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
+    	//console.log(typeof(result));
+      	var userObj = JSON.parse(result);
              // alert(userObj.length);
               
-      var objlength = Object.keys(userObj.moodlist).length;
-      var statusLine;
-      var selection = 0;
+      	var objlength = Object.keys(userObj.moodlist).length;
+      	var statusLine;
+      	var selection = 0;
       
-      for(i=0;i<objlength;i++){
-        statusLine+=('<div>'+userObj.moodlist[i].name+' is feeling');  
-        
-        selection = userObj.moodlist[i].mood;
-        
-        if(selection ==1 ){
-          
-          statusLine= statusLine+' happy ';
-        } else if(selection ==2){
-          
-         statusLine= statusLine+' sad ';
+					for(i=0;i<objlength;i++){
+						statusLine+=('<div>'+userObj.moodlist[i].name+' is feeling');  
 
-        }else if(selection ==3){
-          
-          statusLine= statusLine+' scared ';
+						selection = userObj.moodlist[i].mood;
+
+						if(selection ==1 ){
+
+							statusLine= statusLine+' happy ';
+						} else if(selection ==2){
+
+						 statusLine= statusLine+' sad ';
+
+						}else if(selection ==3){
+
+							statusLine= statusLine+' scared ';
 
 
-      }else if(selection ==4){
-        
-         statusLine= statusLine+' disgust ';
+					}else if(selection ==4){
 
-        
-        
-      }else if(selection ==5){
-           statusLine= statusLine+' angry ';
+						 statusLine= statusLine+' disgust ';
+					}else if(selection ==5){
+							 statusLine= statusLine+' angry ';
 
-        
-        
-      }else if(selection ==6){
-           statusLine= statusLine+' exhausted ';
+					}else if(selection ==6){
+							 statusLine= statusLine+' exhausted ';
 
-      }
-          statusLine= statusLine+' about ';
-          statusLine= statusLine+userObj.moodlist[i].content;
-      }
+					}
+							statusLine= statusLine+' about ';
+							statusLine= statusLine+userObj.moodlist[i].content;
+					}
               
               
          $("#display").html(statusLine);
@@ -174,8 +164,7 @@ indiButt.addEventListener("click", function(){
                 //newBar(result);
   
       }});
-      
-});
+      });
 
 function dayCast(){
   //find dates that matches current day

@@ -23,7 +23,8 @@ var rightButton = document.getElementById("rightArrow");
 var dayButt = document.getElementById("dayButton");
 var totalButton = document.getElementById("total");
 var weekButt = document.getElementById("weekButton");
-var indiButt = document.getElementById("indi");
+
+var $indiButton = $(document.getElementById("indi"));
 
 var dayline = document.getElementById("dayline");
 var weekline = document.getElementById("weekline");
@@ -32,138 +33,22 @@ var indiline = document.getElementById("indiline");
 var submitButton = document.getElementById("submit");
 
 window.onload = function(){
-
+  displayStatus();
+  displayBars();
   
 }
-
 
 totalButton.addEventListener("click", function(){
 
   //alert("clicked");
-    $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
-    
-    console.log(typeof(result));
-    var userObj = JSON.parse(result);
-    
-      var objlength = Object.keys(userObj.moodlist).length;
-    var selection = 0;
-
-      var happyCount = 0;
-      var sadCount = 0;
-      var scaredCount = 0;
-      var disgustCount = 0;
-      var angryCount = 0;
-      var exhaustCount = 0;
-  
-     for(i=0;i<objlength;i++){        
-        selection = userObj.moodlist[i].mood;
-        
-        if(selection ==1 ){
-          happyCount++;
-        } else if(selection ==2){
-          
-          sadCount++;
-        }else if(selection ==3){
-          
-          scaredCount++;
-
-
-        }else if(selection ==4){
-        
-          disgustCount++;
-
-        }else if(selection ==5){
-          angryCount++;
-
-        }else if(selection ==6){
-            exhaustCount++;
-
-          }
-        
-      }
-              
-  new Chart(document.getElementById("newChart"), {
-    type: 'bar',
-    data: {
-      labels: ["Happy",
-        "Sad",
-        "Scared",
-        "Disgust", 
-        "Angry", 
-        "Exhausted"],
-      datasets: [{
-        label:["Emotion"],
-        backgroundColor: ["#E74C3C", "#52BE80","#F4D03F","#1F618D","#8A2BE2","#00FFFF"],
-        data: [happyCount, 
-               sadCount, 
-               scaredCount, 
-               disgustCount, 
-               angryCount, 
-               exhaustCount]
-      }]
-    },
-    options: {
-       legend: {
-        display: false
-    },
-      title: {
-        display: true,
-        text: 'Mood for the day'
-      }
-    }
-    });  
-    }});
-  
- 
+   
 });
 
-$("#indi").click(function(){
-      $.ajax({url:"http://localhost:3000/dailyStats", success: function(result){
-    	//console.log(typeof(result));
-      	var userObj = JSON.parse(result);
-             // alert(userObj.length);
-              
-      	var objlength = Object.keys(userObj.moodlist).length;
-      	var statusLine;
-      	var selection = 0;
-      
-					for(i=0;i<objlength;i++){
-						statusLine+=('<div>'+userObj.moodlist[i].name+' is feeling');  
-
-						selection = userObj.moodlist[i].mood;
-
-						if(selection ==1 ){
-
-							statusLine= statusLine+' happy ';
-						} else if(selection ==2){
-
-						 statusLine= statusLine+' sad ';
-
-						}else if(selection ==3){
-
-							statusLine= statusLine+' scared ';
 
 
-					}else if(selection ==4){
 
-						 statusLine= statusLine+' disgust ';
-					}else if(selection ==5){
-							 statusLine= statusLine+' angry ';
-
-					}else if(selection ==6){
-							 statusLine= statusLine+' exhausted ';
-
-					}
-							statusLine= statusLine+' about ';
-							statusLine= statusLine+userObj.moodlist[i].content;
-					}
-              
-              
-         $("#display").html(statusLine);
-
-                //newBar(result);
-  
-      }});
+$indiButton.click(function(){
+   
       });
 
 function dayCast(){
@@ -202,10 +87,174 @@ function newBar(result) {
    
 }
 
-indiButt.addEventListener("mouseover", function(){
-    
-    
-})
+function displayStatus(){
+     $.ajax({url:"http://localhost:3000/indiStats", success: function(result){
+    	//console.log(typeof(result));
+      	var userObj = JSON.parse(result);
+             // alert(userObj.length);
+              
+      	var objlength = Object.keys(userObj.moodlist).length;
+      	var statusLine;
+      	var selection = 0;
+      
+					for(i=0;i<objlength;i++){
+						statusLine+=('<div>'+userObj.moodlist[i].name+' feels');  
 
+						selection = userObj.moodlist[i].mood;
+
+						if(selection ==1 ){
+
+							statusLine= statusLine+' <span id="happy">happy<span> ';
+						} else if(selection ==2){
+
+						 statusLine= statusLine+' <span id="happy">sad<span> ';
+
+						}else if(selection ==3){
+
+							statusLine= statusLine+' scared ';
+
+
+					}else if(selection ==4){
+
+						 statusLine= statusLine+' disgusted ';
+					}else if(selection ==5){
+							 statusLine= statusLine+' angry ';
+
+					}else if(selection ==6){
+							 statusLine= statusLine+' exhausted ';
+
+					} else if(selection ==7){
+							 statusLine= statusLine+' in love ';
+
+					}
+							statusLine= statusLine+' about ';
+							statusLine= statusLine+userObj.moodlist[i].userinput;
+					}
+              
+              
+         $("#display").html(statusLine);
+         
+
+                //alert(statusLine);
+                //newBar(result);
+  
+      }});
+}
+
+function displayBars(){
+   $.ajax({url:"http://localhost:3000/getBars", success: function(result){
+    
+    //console.log(typeof(result));
+    var moodObj = JSON.parse(result);
+    console.log(moodObj.moodArr[6]);
+    
+    //var objlength = Object.keys(moodObj.moodlist).length;
+    //var selection = 0;
+      /*
+      var happyCount = 0;
+      var sadCount = 0;
+      var scaredCount = 0;
+      var disgustCount = 0;
+      var angryCount = 0;
+      var exhaustCount = 0;
+      var loveCount = 0;
+  
+     for(i=0;i<objlength;i++){        
+        selection = moodObj.moodlist[i].mood;
+        
+        if(selection ==1 ){
+          happyCount++;
+        } else if(selection ==2){
+          
+          sadCount++;
+        }else if(selection ==3){
+          
+          scaredCount++;
+
+
+        }else if(selection ==4){
+        
+          disgustCount++;
+
+        }else if(selection ==5){
+          angryCount++;
+
+        }else if(selection ==6){
+            exhaustCount++;
+
+        } else if(selection == 7){
+           loveCount++; 
+        }
+        
+      }*/
+              
+  new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+      labels: ["Happy",
+        "Sad",
+        "Scared",
+        "Disgust", 
+        "Angry", 
+        "Exhausted",
+        "Love",
+        ],
+      datasets: [{
+        label:["Emotion"],
+         backgroundColor: [
+                //happy
+                'rgba(231, 208, 35, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                //scared
+                'rgba(153, 102, 255, 0.5)',               
+                 //disgust
+                'rgba(75, 192, 192, 0.5)',
+                 //angry
+                'rgba(255, 99, 132, 0.5)',
+                //exhaust
+                'rgba(255, 159, 64, 0.5)',
+                 //love
+                'rgba(253, 165, 196, 0.5)'
+            ],
+            borderColor: [
+                'rgba(231, 208, 35, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(253, 165, 196, 1)'
+            ],
+            borderWidth:1,
+        data: [moodObj.moodArr[0], 
+               moodObj.moodArr[1], 
+               moodObj.moodArr[2], 
+               moodObj.moodArr[3], 
+               moodObj.moodArr[4], 
+               moodObj.moodArr[5],
+               moodObj.moodArr[6]]
+      }]
+    },
+    options: {
+       legend: {
+        display: false,
+           scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    },
+      title: {
+        display: true,
+        text: '#of People By Moods'
+      }
+    }
+    });  
+    }});
+  
+ 
+}
 
 

@@ -1,16 +1,17 @@
 
 
 #display {
-  position:relative;
-  top:360px;
+      color:white;
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    text-align: center;
   overflow-y:auto;
   overflow-x: hidden;
   height: 500px;
-  width:50vw;
-  left:25vw;
-  right:25vw;
-  background-color:#008ae6;
-  border-radius: 20px;
+  border-radius: 7px;
+  border-style:solid;
+  border-width:1px;
+  border-color:white;
   padding:20px;
 }
 
@@ -140,15 +141,9 @@ i.right:hover{
   left:0px;
 }
 canvas{
-  display: none;
-  position:relative;
-  top:300px;
-  left:25vw;
-  right:25vw;
+
   background-color:white;
 
-   width:50vw !important;
-  height:400px !important;
 }
 
 

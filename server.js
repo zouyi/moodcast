@@ -383,7 +383,7 @@ app.listen(port, function(err){
        return false;
    } 
     
-    console.log("PORT IS READY FOR H@X");
+    console.log("PORT 3000 IS READY");
     
     
 });

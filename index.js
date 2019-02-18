@@ -89,12 +89,12 @@ function newBar(result) {
 
 function displayStatus(){
      $.ajax({url:"http://localhost:3000/indiStats", success: function(result){
-    	//console.log(typeof(result));
+    	console.log(result);
       	var userObj = JSON.parse(result);
              // alert(userObj.length);
               
       	var objlength = Object.keys(userObj.moodlist).length;
-      	var statusLine;
+      	var statusLine = "";
       	var selection = 0;
       
 					for(i=0;i<objlength;i++){
@@ -104,27 +104,27 @@ function displayStatus(){
 
 						if(selection ==1 ){
 
-							statusLine= statusLine+' <span id="happy">happy<span> ';
+							statusLine= statusLine+' <span id="happy">happy</span> ';
 						} else if(selection ==2){
 
-						 statusLine= statusLine+' <span id="happy">sad<span> ';
+						 statusLine= statusLine+' <span id="sad">sad</span> ';
 
 						}else if(selection ==3){
 
-							statusLine= statusLine+' scared ';
+							statusLine= statusLine+' <span id="scared">scared</span> ';
 
 
 					}else if(selection ==4){
 
-						 statusLine= statusLine+' disgusted ';
+						 statusLine= statusLine+' <span id="disgusted">disgusted</span> ';
 					}else if(selection ==5){
-							 statusLine= statusLine+' angry ';
+							 statusLine= statusLine+' <span id="angry">angry</span> ';
 
 					}else if(selection ==6){
-							 statusLine= statusLine+' exhausted ';
+							 statusLine= statusLine+' <span id="exhausted">exhausted</span> ';
 
 					} else if(selection ==7){
-							 statusLine= statusLine+' in love ';
+							 statusLine= statusLine+' <span id="inlove">in love</span> ';
 
 					}
 							statusLine= statusLine+' about ';

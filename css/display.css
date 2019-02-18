@@ -13,6 +13,8 @@
   border-width:1px;
   border-color:white;
   padding:20px;
+  background-color:rgba(0, 0, 0, 0.3);
+  font-size:16pt;
 }
 
 #displayStatus {
@@ -145,5 +147,36 @@ canvas{
   background-color:white;
 
 }
+
+#happy {
+  color:rgba(231, 208, 35, 1);
+}
+
+#sad {
+  color:rgba(54, 162, 235, 1);
+}
+
+#scared {
+  color:rgba(54, 162, 235, 1);
+}
+
+#disgusted {
+  color:rgba(75, 192, 192, 1);
+}
+
+#angry {
+  color:rgba(255, 99, 132, 1);
+}
+
+#exhausted {
+  color:rgba(255, 159, 64, 1);
+}
+
+#inlove {
+  color:rgba(253, 165, 196, 1);
+  font-weight: 400;
+}
+
+
 
 

@@ -68,6 +68,14 @@ h5{
     font-weight:400;
 }
 
+.span-text-footer{
+		 color:white !important;
+  font-family: 'Sawarabi Mincho', sans-serif !important;
+    font-weight:400;
+  font-size:12pt;
+}
+
+
 .ifeel{
 	display:inline;
 }
@@ -222,6 +230,12 @@ i {
 #moodDisp {
     
     position:relative;
+}
+
+.social-media{
+  position:fixed;
+  left:20px;
+  top:10px;
 }
 
 /* width */

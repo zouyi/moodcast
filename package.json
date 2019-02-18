@@ -1,8 +1,8 @@
 {
-"name": "coolnodeapp",
+"name": "moodstats",
 "version": "1.0.0",
-"description": "node app ",
-"main": "app.js",
+"description": "node statistical app",
+"main": "server.js",
 "scripts": {
 "start": "node server.js"
 },

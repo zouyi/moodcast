@@ -129,7 +129,7 @@ app.get("/indiStats", function(req, resp){
 app.get("/getBars", function(req, resp){
 
        
-  fs.readFile('moodlist.json', 'utf8', function readFileCallback(err, data){
+  fs.readFile(path.join(__dirname+'/moodlist.json'), 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {

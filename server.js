@@ -13,7 +13,6 @@ app.use(bodyParser.json());
 
 var path = require('path');
 app.use('/', express.static(__dirname + '/'));
-
 app.use('/imgs', express.static(__dirname + '/imgs'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
@@ -113,7 +112,7 @@ app.get("/", function(req, resp){
 
 app.get("/indiStats", function(req, resp){
 
-  fs.readFile('moodlist.json', 'utf8', function readFileCallback(err, data){
+  fs.readFile(path.join(__dirname+'/moodlist.json'), 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {

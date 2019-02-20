@@ -86,7 +86,7 @@ app.post('/sendForm', function(req, res) {
   //obj.moodlist.push(userObj);
   
   
-  fs.readFile(path.join(__dirname+'/moodlist.txt'), 'utf8', function readFileCallback(err, data){
+  fs.readFile('moodlist.txt', 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {

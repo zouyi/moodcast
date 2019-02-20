@@ -33,6 +33,7 @@ var indiline = document.getElementById("indiline");
 var submitButton = document.getElementById("submit");
 
 window.onload = function(){
+  
   displayStatus();
   displayBars();
   

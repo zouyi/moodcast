@@ -86,14 +86,14 @@ app.post('/sendForm', function(req, res) {
   //obj.moodlist.push(userObj);
   
   
-  fs.readFile(path.join(__dirname+'/moodlist.json'), 'utf8', function readFileCallback(err, data){
+  fs.readFile(path.join(__dirname+'/moodlist.txt'), 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {
     obj = JSON.parse(data); //now it an object
     obj.moodlist.push(userObj); //add some data
     json = JSON.stringify(obj); //convert it back to json
-    fs.writeFile('moodlist.json', json, 'utf8'); // write it back 
+    fs.writeFile('moodlist.txt', json, 'utf8'); // write it back 
 }});
   
      res.sendFile(path.join(__dirname + '/index.html'));
@@ -112,7 +112,7 @@ app.get("/", function(req, resp){
 
 app.get("/indiStats", function(req, resp){
 	
-  fs.readFile(path.join(__dirname+'/moodlist.json'), 'utf8', function readFileCallback(err, data){
+  fs.readFile(path.join(__dirname+'/moodlist.txt'), 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {
@@ -129,7 +129,7 @@ app.get("/indiStats", function(req, resp){
 app.get("/getBars", function(req, resp){
 
        
-  fs.readFile(path.join(__dirname+'/moodlist.json'), 'utf8', function readFileCallback(err, data){
+  fs.readFile(path.join(__dirname+'/moodlist.txt'), 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {
